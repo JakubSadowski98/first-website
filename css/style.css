@@ -1,0 +1,192 @@
+@charset "UTF-8";
+/* Global */
+*, *::before, *::after { /* deklaracja mówiąca, ze do rozmiarów wszystkich */
+  box-sizing: border-box; /* elementów HTML wlicza się padding i border */
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  background: #fff;
+  color: black;
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 108px 0;
+}
+
+.section-title {
+  position: relative;
+  font-size: 36px;
+  margin: 0 0 60px 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.section-title::after {
+  position: absolute; /* determinuje, jak elementy będą pozycjonowane */
+  content: ""; /* w stosunku do siebie nawzajem */
+  bottom: -12px;
+  left: 50%;
+  width: 50px;
+  height: 10px;
+  transform: translateX(-50%);
+  background: red;
+}
+
+/* Splash */
+.splash {
+  height: 100vh;
+  position: relative;
+  background-image: url("https://i.postimg.cc/x1KqNzSD/pexels-arina-dmitrieva-13803731.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.splash-inner {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.splash i { /* wybierz wszystkie znaczniki <i> w elemencie o klasie .splash */
+  font-size: 30px;
+  background: rgb(0, 0, 0);
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.page-title {
+  color: #fff; /* color: white */
+  font-size: 60px;
+  margin: 48px 0 0 0;
+  position: relative;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.page-title::after {
+  position: absolute;
+  content: "";
+  bottom: -24px;
+  left: 50%;
+  width: 100px;
+  height: 10px;
+  transform: translateX(-50%);
+  background: #fff;
+}
+
+.page-subtitle {
+  margin: 48px 0 0 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Intro */
+.intro {
+  background: #fff;
+}
+
+.intro p { /* wybierz wszystkie znaczniki <p> w elemencie o klasie .intro */
+  width: 70%;
+  margin: 0 auto;
+  padding: 48px 0;
+  font-size: 24px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  color: black;
+}
+
+/* About */
+.about {
+  background: #f0f0f0;
+}
+
+/* Skills */
+.skills ul {
+  list-style-type: none; /*resetowanie domyślnych styli */
+  margin: 0;
+  padding: 0;
+}
+
+.skills ul li {
+  position: relative;
+}
+
+.skill-image {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.skill-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.skill.right .skill-image {
+  right: 0;
+}
+
+.skill.right .skill-description {
+  padding: 36px 55% 36px 0;
+  text-align: right;
+}
+
+.skill.left .skill-description {
+  padding: 36px 0 36px 55%;
+  text-align: left;
+}
+
+/* Portfolio */
+.row::before,
+.row::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.portfolio .row { /* lub .portfolio ul */
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.portfolio .row li {
+  float: left;
+  width: 33.3333%;
+}
+
+.portfolio-image {
+  position: relative;
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.button:hover {
+  border-style: solid;
+  border-color: blue;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLmNzcyIsIi4uL3Nhc3Mvc3R5bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGdCQUFnQjtBQ0FoQixXQUFBO0FBQ0EseUJBQUEsbURBQUE7RUFDQyxzQkFBQSxFQUFBLCtDQUFBO0FERUQ7O0FDQ0E7RUFDSSxTQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxvQ0FBQTtBREVKOztBQ0NBO0VBQ0ksaUJBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtBREVKOztBQ0NBO0VBQ0ksZ0JBQUE7QURFSjs7QUNDQTtFQUNJLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0VBQ0EsdUNBQUE7QURFSjs7QUNDQTtFQUNJLGtCQUFBLEVBQUEsaURBQUE7RUFDRCxXQUFBLEVBQUEsa0NBQUE7RUFDQSxhQUFBO0VBQ0EsU0FBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsMkJBQUE7RUFDQSxlQUFBO0FERUg7O0FDQ0EsV0FBQTtBQUNBO0VBQ0ksYUFBQTtFQUNBLGtCQUFBO0VBQ0EsMEZBQUE7RUFDQSxrQ0FBQTtFQUNBLHNCQUFBO0VBQ0EsNEJBQUE7QURFSjs7QUNDQTtFQUNJLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsZ0NBQUE7QURFSjs7QUNDQSxZQUFBLGlFQUFBO0VBQ0ssZUFBQTtFQUNBLHdCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtBREVMOztBQ0NBO0VBQ0ksV0FBQSxFQUFBLGlCQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSx1Q0FBQTtBREVKOztBQ0NBO0VBQ0csa0JBQUE7RUFDQSxXQUFBO0VBQ0EsYUFBQTtFQUNBLFNBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtFQUNBLDJCQUFBO0VBQ0EsZ0JBQUE7QURFSDs7QUNDQTtFQUNJLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFdBQUE7QURFSjs7QUNDQSxVQUFBO0FBQ0E7RUFDSSxnQkFBQTtBREVKOztBQ0NBLFdBQUEsZ0VBQUE7RUFDSSxVQUFBO0VBQ0EsY0FBQTtFQUNBLGVBQUE7RUFDQSxlQUFBO0VBQ0EsMkJBQUE7RUFDQSw4QkFBQTtFQUNBLFlBQUE7QURFSjs7QUNDQSxVQUFBO0FBQ0E7RUFDSSxtQkFBQTtBREVKOztBQ0NBLFdBQUE7QUFDQTtFQUNJLHFCQUFBLEVBQUEsZ0NBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtBREVKOztBQ0NBO0VBQ0ksa0JBQUE7QURFSjs7QUNDQTtFQUNJLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBREVKOztBQ0NBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSxvQkFBQTtLQUFBLGlCQUFBO0FERUo7O0FDQ0E7RUFDSSxRQUFBO0FERUo7O0FDQ0E7RUFDRyx3QkFBQTtFQUNDLGlCQUFBO0FERUo7O0FDQ0E7RUFDSSx3QkFBQTtFQUNBLGdCQUFBO0FERUo7O0FDQ0EsY0FBQTtBQUNBOztFQUVJLFdBQUE7RUFDQSxXQUFBO0VBQ0EsY0FBQTtBREVKOztBQ0NBLGtCQUFBLHNCQUFBO0VBQ0kscUJBQUE7RUFDQSxlQUFBO0FERUo7O0FDQ0E7RUFDSSxXQUFBO0VBQ0EsZUFBQTtBREVKOztBQ0NBO0VBQ0ksa0JBQUE7QURFSjs7QUNDQTtFQUNJLFdBQUE7RUFDQSxhQUFBO0VBQ0Esb0JBQUE7S0FBQSxpQkFBQTtFQUNBLGNBQUE7QURFSjs7QUNDQTtFQUNJLG1CQUFBO0VBQ0Esa0JBQUE7QURFSiIsImZpbGUiOiJzdHlsZS5jc3MifQ== */
