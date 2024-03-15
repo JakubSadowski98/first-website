@@ -1,0 +1,229 @@
+/* Variables */
+$color-main: #fff;
+$color-dark: #3d3d3d;
+$color-contact: #171717;
+$color-footer: #242424;
+
+$font-text: 'Josefin Sans', sans-serif;
+$font-header: 'Open Sans', sans-serif;
+
+/* Global - style, które są stosowane dla wielu elementów */
+*, *::before, *::after {        /* deklaracja mówiąca, ze do rozmiarów wszystkich */
+  box-sizing: border-box;       /* elementów HTML (selektor gwiazdka) */
+}                               /* wlicza się padding i border */
+
+body {
+  margin: 0; /* usunięcie domyślnego marginesu nadawanego elementowi <body> przez przeglądarkę */
+  text-align: center; /* wyśrodkowanie tekstu w całym projekcie */
+  background: $color-main;
+  color: $color-dark;
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: $font-header;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 108px 0;
+}
+
+.section-title {
+  position: relative;
+  font-size: 36px;
+  margin: 0 0 60px 0;
+  font-family: $font-text;
+
+  &::after {                // pseudoelement - może posłużyć jako element dekoracyjny "podpięty" do już istniejącego elementu-rodzica, np. <div>
+    position: absolute;     // elementy jest pozycjonowany względem swojego rodzica, a nie całej strony
+    content: '';
+    width: 50px;
+    height: 10px;
+    background: #ff5e57;
+    bottom: -12px;
+    left: 50%;                    // centrowawnie elementu w poziomie
+    transform: translateX(-50%);
+  }
+}
+
+/* Splash */
+.splash {           // pisząć zagnieżdżone refuły należy unikać zbyt
+  height: 100vh;    // głębokiego zagnieżdżania (powyżej 3 poziomów)
+  position: relative;
+  background-image: url('https://i.postimg.cc/x1KqNzSD/pexels-arina-dmitrieva-13803731.jpg');
+  background-position: center center; // wycentrowanie tła w pionie i poziomie
+  background-size: cover;
+  background-attachment: fixed; // tło jest ustawione u górze strony
+
+  .splash-inner {
+    width: 100%;
+    position: absolute; // instrukcja ustawiająca element-dziecko dokładnie
+    top: 50%;           // na środku elementu-rodzica
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  i {                 /* wybierz wszystkie znaczniki <i> w elemencie o klasie .splash */
+    font-size: 30px;
+    background: $color-dark;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    color: $color-main;
+    border-radius: 50%;
+  }
+
+  .page-title {
+    color: $color-main;    /* color: white */
+    font-size: 60px;
+    margin: 48px 0 0 0;
+    position: relative;
+    font-family: $font-text;
+
+    &::after {            // kompilator stworzy w pliku CSS selektor: .page-title::after
+      position: absolute;
+      content: '';
+      bottom: -24px;
+      left: 50%;
+      width: 100px;
+      height: 10px;
+      transform: translateX(-50%);
+      background: $color-main;
+    }
+  }
+
+  .page-subtitle {
+    margin: 48px 0 0 0;
+    font-size: 18px;
+    color: $color-main;
+  }
+
+}
+
+/* Intro */
+.intro {
+  background: $color-main;
+
+  p {                 /* wybierz wszystkie znaczniki <p> w elemencie o klasie .intro */
+    width: 70%;
+    margin: 0 auto;
+    padding: 48px 0;
+    font-size: 24px;
+    border-top: 1px solid $color-dark;
+    border-bottom: 1px solid $color-dark;
+    color: $color-dark;
+  }
+
+}
+
+/* About */
+.about {
+  background: #f0f0f0;
+}
+
+/* Skills */
+.skills {
+
+  ul {
+    list-style-type: none;  /*resetowanie domyślnych styli */
+    margin: 0;
+    padding: 0;
+  }
+
+  ul li {
+    position: relative;
+  }
+
+}
+
+.skill-image {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // dopasowanie obrazka do kontenera
+  }
+
+}
+
+.skill.right {
+
+  .skill-image {
+    right: 0;
+  }
+
+  .skill-description {
+    padding: 36px 55% 36px 0;
+    text-align: right;
+  }
+
+}
+
+.skill.left {
+
+  .skill-description {
+    padding: 36px 0 36px 55%;
+    text-align: left;
+  }
+
+}
+
+
+/* Portfolio */
+.row::before,   /* reguła zapobiegająca "uciekaniu" elementów (z właściwością float) poza swój kontener */
+.row::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.portfolio {
+
+  .row {   /* lub .portfolio ul */
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      float: left;
+      width: 33.3333%;
+    }
+  }
+
+}
+
+.portfolio-image {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+
+    &.button:hover {        // kompilator stworzy w pliku CSS selektor: img.button:hover
+      border-style: solid;
+      border-color: blue;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
