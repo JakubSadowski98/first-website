@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>My first website</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"> <!-- wykorzystanie zestawu ikon Font Awesome -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Open+Sans:ital,wght@1,500&display=swap"> <!-- wykorzystanie zestawu czcionek -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"> <!-- podłączenie zestawu ikon Font Awesome -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Open+Sans:ital,wght@1,500&display=swap"> <!-- podłączenie zestawu czcionek -->
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
         <div class="container"> <!-- element container ogranicza szerokość treści w sekcji -->
           <i class="fa-solid fa-snowflake"></i>   <!--dodanie logo -->
           <h1 class="page-title">Hi, I'm Jakub Sadowski.</h1>
-          <h2 class="page-subtitle">Beginner Web Developer</h2>
+          <h2 class="page-subtitle">Beginner Frontend developer</h2>
         </div>
       </div>
     </header>
@@ -38,7 +38,7 @@
             </div>
             <div class="skill-description">
               <h3 class="skill-title">Football</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium lacus vitae mi viverra ornare. Morbi sodales ac sapien eget auctor.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium lacus vitae mi viverra ornare. Morbi sodales ac sapien eget auctor. </p>
             </div>
           </li>
           <li class="skill right">
@@ -67,38 +67,58 @@
       <ul class="row">
         <li>
           <div class="portfolio-image">
-            <img src="https://i.postimg.cc/MG3XcZrn/pexels-esra-korkmaz-13814635.jpg" alt="image" class="button">
+            <img src="https://i.postimg.cc/MG3XcZrn/pexels-esra-korkmaz-13814635.jpg" alt="image">
+            <div class="details"><a href="#">SEE DETAILS</a></div>
           </div>
         </li>
         <li>
           <div class="portfolio-image">
-            <img src="https://i.postimg.cc/7YrhJWXn/pexels-eugene-golovesov-14003122.jpg" alt="image" class="button">
+            <img src="https://i.postimg.cc/7YrhJWXn/pexels-eugene-golovesov-14003122.jpg" alt="image">
+            <div class="details"><a href="#">SEE DETAILS</a></div>
           </div>
         </li>
         <li>
           <div class="portfolio-image">
-            <img src="https://i.postimg.cc/2jZ36Dd5/pexels-paige-thompson-13990668.jpg" alt="image" class="button">
+            <img src="https://i.postimg.cc/2jZ36Dd5/pexels-paige-thompson-13990668.jpg" alt="image">
+            <div class="details"><a href="#">SEE DETAILS</a></div>
           </div>
         </li>
         <li>
           <div class="portfolio-image">
-            <img src="https://i.postimg.cc/2jZ36Dd5/pexels-paige-thompson-13990668.jpg" alt="image" class="button">
+            <img src="https://i.postimg.cc/2jZ36Dd5/pexels-paige-thompson-13990668.jpg" alt="image">
+            <div class="details"><a href="#">SEE DETAILS</a></div>
           </div>
         </li>
         <li>
           <div class="portfolio-image">
-            <img src="https://i.postimg.cc/MG3XcZrn/pexels-esra-korkmaz-13814635.jpg" alt="image" class="button">
+            <img src="https://i.postimg.cc/MG3XcZrn/pexels-esra-korkmaz-13814635.jpg" alt="image">
+            <div class="details"><a href="#">SEE DETAILS</a></div>
           </div>
         </li>
         <li>
           <div class="portfolio-image">
-            <img src="https://i.postimg.cc/7YrhJWXn/pexels-eugene-golovesov-14003122.jpg" alt="image" class="button">
+            <img src="https://i.postimg.cc/7YrhJWXn/pexels-eugene-golovesov-14003122.jpg" alt="image">
+            <div class="details"><a href="#">SEE DETAILS</a></div>
           </div>
         </li>
       </ul>
     </section>
     <section class="contact"> <!-- formularz kontaktowy -->
-      <h2 class="section-title">Contact</h2>
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <form>
+          <input type="text" placeholder="Your name">
+          <input type="email" placeholder="Your e-mail">
+          <input type="text" placeholder="Subject">
+          <textarea rows="5" placeholder="Type your message here"></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </section>
+    <footer class="page-footer">
+      <div class="container">
+        <p>Copyright &copy; 2024</p>
+      </div>
+    </footer>
   </body>
 </html>

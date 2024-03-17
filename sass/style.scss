@@ -19,7 +19,7 @@ body {
   color: $color-dark;
   font-size: 16px;
   line-height: 1.7;
-  font-family: $font-header;
+  font-family: $font-text;
 }
 
 .container {
@@ -36,7 +36,7 @@ section {
   position: relative;
   font-size: 36px;
   margin: 0 0 60px 0;
-  font-family: $font-text;
+  font-family: $font-header;
 
   &::after {                // pseudoelement - może posłużyć jako element dekoracyjny "podpięty" do już istniejącego elementu-rodzica, np. <div>
     position: absolute;     // elementy jest pozycjonowany względem swojego rodzica, a nie całej strony
@@ -51,13 +51,13 @@ section {
 }
 
 /* Splash */
-.splash {           // pisząć zagnieżdżone refuły należy unikać zbyt
+.splash {           // pisząć zagnieżdżone reguły należy unikać zbyt
   height: 100vh;    // głębokiego zagnieżdżania (powyżej 3 poziomów)
   position: relative;
   background-image: url('https://i.postimg.cc/x1KqNzSD/pexels-arina-dmitrieva-13803731.jpg');
   background-position: center center; // wycentrowanie tła w pionie i poziomie
   background-size: cover;
-  background-attachment: fixed; // tło jest ustawione u górze strony
+  background-attachment: fixed; // przy zwijaniu strony tło będzie zawsze w tym samym miejscu
 
   .splash-inner {
     width: 100%;
@@ -82,7 +82,7 @@ section {
     font-size: 60px;
     margin: 48px 0 0 0;
     position: relative;
-    font-family: $font-text;
+    font-family: $font-header;
 
     &::after {            // kompilator stworzy w pliku CSS selektor: .page-title::after
       position: absolute;
@@ -101,7 +101,6 @@ section {
     font-size: 18px;
     color: $color-main;
   }
-
 }
 
 /* Intro */
@@ -117,7 +116,6 @@ section {
     border-bottom: 1px solid $color-dark;
     color: $color-dark;
   }
-
 }
 
 /* About */
@@ -132,26 +130,32 @@ section {
     list-style-type: none;  /*resetowanie domyślnych styli */
     margin: 0;
     padding: 0;
-  }
 
-  ul li {
-    position: relative;
+    li {
+      position: relative;
+    }
   }
-
 }
 
 .skill-image {
   position: absolute;
   width: 50%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden; // zawartość wystająca poza kontener jest ukrywana
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover; // dopasowanie obrazka do kontenera
   }
+}
 
+.skill.left {
+
+  .skill-description {
+    padding: 36px 0 36px 55%;
+    text-align: left;
+  }
 }
 
 .skill.right {
@@ -164,39 +168,26 @@ section {
     padding: 36px 55% 36px 0;
     text-align: right;
   }
-
 }
-
-.skill.left {
-
-  .skill-description {
-    padding: 36px 0 36px 55%;
-    text-align: left;
-  }
-
-}
-
 
 /* Portfolio */
-.row::before,   /* reguła zapobiegająca "uciekaniu" elementów (z właściwością float) poza swój kontener */
-.row::after {
-  clear: both;
+   .row::before, .row::after {  // reguła zapobiegająca "uciekaniu" elementów (z właściwością
+  clear: both;                  // float) poza swój kontener
   content: "";
   display: table;
 }
 
 .portfolio {
 
-  .row {   /* lub .portfolio ul */
+  .row {
     list-style-type: none;
     padding-left: 0;
 
     li {
-      float: left;
+      float: left; // przesunięcie elementu maksymalnie do lewej strony
       width: 33.3333%;
     }
   }
-
 }
 
 .portfolio-image {
@@ -207,14 +198,83 @@ section {
     height: 300px;
     object-fit: cover;
     display: block;
+    transition: all 1s;
 
-    &.button:hover {        // kompilator stworzy w pliku CSS selektor: img.button:hover
-      border-style: solid;
-      border-color: blue;
+    &:hover {        // kompilator stworzy w pliku CSS selektor: img.button:hover
+      transform: scale(1.1);
+    }
+
+  }
+
+  .details {
+    width: 120px;
+    height: 25px;
+    background-color: #ff5e57;
+    z-index: 1; // wysunięcie elementu na wierzch (na najwyższą warstwę)
+    display: none;
+    transition: all 1s; // właściwośc pozwalająca na animowanie zmian innych właściwości (np. rozmiar, kolor)
+    position: absolute; // wycentrowanie elementu w pionie i poziomie
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    &:hover {
+      display: block;
+      transform: scale(1.2);;
+    }
+
+    a {
+      text-decoration: none;
+      color: $color-main;
     }
   }
 
+  &:hover .details {
+    display: block;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: $color-dark;
+    opacity: 60%;
+    display: none;
+  }
+
+  &:hover::after {
+    display: block;
+  }
 }
+
+/* Contact */
+.contact {
+  background-color: $color-contact;
+
+  form {
+    margin: 0 200px;
+
+    input, textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      line-height: 20px;
+    }
+  }
+}
+
+/* Footer */
+.page-footer {
+  background-color: $color-footer;
+  color: $color-main;
+}
+
+
+
 
 
 
