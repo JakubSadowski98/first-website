@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- informacja dla przeglądarki, że szerokość widoku ma zostać zrównana z szerokością ekranu urządzenia -->
     <title>My first website</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"> <!-- podłączenie zestawu ikon Font Awesome -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Open+Sans:ital,wght@1,500&display=swap"> <!-- podłączenie zestawu czcionek -->
@@ -10,49 +11,50 @@
   <body>
     <header class="splash"> <!-- główny nagłówek -->
       <div class="splash-inner">
+        <i class="fa-solid fa-dragon"></i>   <!--dodanie logo -->
         <div class="container"> <!-- element container ogranicza szerokość treści w sekcji -->
-          <i class="fa-solid fa-snowflake"></i>   <!--dodanie logo -->
-          <h1 class="page-title">Hi, I'm Jakub Sadowski.</h1>
+          <h1 class="page-title">Hi, I'm James</h1>
           <h2 class="page-subtitle">Beginner Frontend developer</h2>
         </div>
       </div>
     </header>
     <section class="intro"> <!-- sekcja powitalna -->
       <div class="container">
-        <p>Lorem ipsum</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium lacus vitae mi viverra ornare. Morbi sodales ac sapien eget auctor. Vestibulum dictum tortor ultrices hendrerit placerat. Pellentesque in dictum quam. Vestibulum cursus venenatis justo sit amet volutpat. Donec ultricies quis nunc pretium condimentum. Duis consequat diam diam, vitae pulvinar lacus dapibus ut. Curabitur enim purus, viverra id rutrum at, mollis a nulla. Nulla eu ipsum vestibulum, tempor ipsum mattis, viverra leo. Aliquam auctor vestibulum nisl, ut dignissim massa vulputate nec.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium lacus vitae mi viverra ornare. Morbi sodales ac sapien eget auctor. Vestibulum dictum tortor ultrices hendrerit placerat. Pellentesque in dictum quam. Vestibulum cursus venenatis justo sit amet volutpat. Donec ultricies quis nunc pretium condimentum. Duis consequat diam diam, vitae pulvinar lacus dapibus ut. Curabitur enim purus, viverra id rutrum at, mollis a nulla. Nulla eu ipsum vestibulum, tempor ipsum mattis, viverra leo. Aliquam auctor vestibulum nisl, ut dignissim massa vulputate nec.</p>
       </div>
     </section>
     <section class="about"> <!-- nagłówek z tekstem -->
       <div class="container">
         <h2 class="section-title">Hello world!</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium lacus vitae mi viverra ornare. Morbi sodales ac sapien eget auctor. Vestibulum dictum tortor ultrices hendrerit placerat. Pellentesque in dictum quam. Vestibulum cursus venenatis justo sit amet volutpat. Donec ultricies quis nunc pretium condimentum. Duis consequat diam diam, vitae pulvinar lacus dapibus ut. Curabitur enim purus, viverra id rutrum at, mollis a nulla. Nulla eu ipsum vestibulum, tempor ipsum mattis, viverra leo. Aliquam auctor vestibulum nisl, ut dignissim massa vulputate nec.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium lacus vitae mi viverra ornare. Morbi sodales ac sapien eget auctor. Vestibulum dictum tortor ultrices hendrerit placerat. Pellentesque in dictum quam. Vestibulum cursus venenatis justo sit amet volutpat. Donec ultricies quis nunc pretium condimentum. Duis consequat diam diam, vitae pulvinar lacus dapibus ut. Curabitur enim purus, viverra id rutrum at, mollis a nulla. Nulla eu ipsum vestibulum, tempor ipsum mattis, viverra leo. Aliquam auctor vestibulum nisl, ut dignissim massa vulputate nec.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium lacus vitae mi viverra ornare. Morbi sodales ac sapien eget auctor. Vestibulum dictum tortor ultrices hendrerit placerat. Pellentesque in dictum quam. Vestibulum cursus venenatis justo sit amet volutpat. Donec ultricies quis nunc pretium condimentum. Duis consequat diam diam, vitae pulvinar lacus dapibus ut. Curabitur enim purus, viverra id rutrum at, mollis a nulla. Nulla eu ipsum vestibulum, tempor ipsum mattis, viverra leo. Aliquam auctor vestibulum nisl, ut dignissim massa vulputate nec.</p>
       </div>
     </section>
     <section class="skills"> <!-- sekcja z naprzemiennie występującymi obrazkami i tekstem -->
       <div class="container">
         <h2 class="section-title">What I do</h2>
         <ul>    <!-- lista zawierająca zdjęcia i opisy -->
-          <li class="skill left">
+          <li class="skill-left">
             <div class="skill-image">
-              <img src="https://i.postimg.cc/MG3XcZrn/pexels-esra-korkmaz-13814635.jpg" alt="image">
+              <img src="images/football.jpg" alt="image">
             </div>
             <div class="skill-description">
               <h3 class="skill-title">Football</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium lacus vitae mi viverra ornare. Morbi sodales ac sapien eget auctor. </p>
             </div>
           </li>
-          <li class="skill right">
+          <li class="skill-right">
             <div class="skill-image">
-              <img src="https://i.postimg.cc/7YrhJWXn/pexels-eugene-golovesov-14003122.jpg" alt="image">
+              <img src="images/math.jpg" alt="image">
             </div>
             <div class="skill-description">
               <h3 class="skill-title">Math</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium lacus vitae mi viverra ornare. Morbi sodales ac sapien eget auctor.</p>
             </div>
           </li>
-          <li class="skill left">
+          <li class="skill-left">
             <div class="skill-image">
-              <img src="https://i.postimg.cc/2jZ36Dd5/pexels-paige-thompson-13990668.jpg" alt="image">
+              <img src="images/gardening.jpg" alt="image">
             </div>
             <div class="skill-description">
               <h3 class="skill-title">Gardening</h3>
@@ -67,38 +69,38 @@
       <ul class="row">
         <li>
           <div class="portfolio-image">
-            <img src="https://i.postimg.cc/MG3XcZrn/pexels-esra-korkmaz-13814635.jpg" alt="image">
-            <div class="details"><a href="#">SEE DETAILS</a></div>
+            <img id="bakery" src="images/bakery.png" alt="image">
+            <div class="details"><a href="#bakery">SEE DETAILS</a></div>
           </div>
         </li>
         <li>
           <div class="portfolio-image">
-            <img src="https://i.postimg.cc/7YrhJWXn/pexels-eugene-golovesov-14003122.jpg" alt="image">
-            <div class="details"><a href="#">SEE DETAILS</a></div>
+            <img id="blog" src="images/blog.png" alt="image">
+            <div class="details"><a href="#blog">SEE DETAILS</a></div>
           </div>
         </li>
         <li>
           <div class="portfolio-image">
-            <img src="https://i.postimg.cc/2jZ36Dd5/pexels-paige-thompson-13990668.jpg" alt="image">
-            <div class="details"><a href="#">SEE DETAILS</a></div>
+            <img id="clothes_shop" src="images/clothes_shop.png" alt="image">
+            <div class="details"><a href="#clothes_shop">SEE DETAILS</a></div>
           </div>
         </li>
         <li>
           <div class="portfolio-image">
-            <img src="https://i.postimg.cc/2jZ36Dd5/pexels-paige-thompson-13990668.jpg" alt="image">
-            <div class="details"><a href="#">SEE DETAILS</a></div>
+            <img id="form" src="images/form.png" alt="image">
+            <div class="details"><a href="#form">SEE DETAILS</a></div>
           </div>
         </li>
         <li>
           <div class="portfolio-image">
-            <img src="https://i.postimg.cc/MG3XcZrn/pexels-esra-korkmaz-13814635.jpg" alt="image">
-            <div class="details"><a href="#">SEE DETAILS</a></div>
+            <img id="pizzeria" src="images/pizzeria.png" alt="image">
+            <div class="details"><a href="#pizzeria">SEE DETAILS</a></div>
           </div>
         </li>
         <li>
           <div class="portfolio-image">
-            <img src="https://i.postimg.cc/7YrhJWXn/pexels-eugene-golovesov-14003122.jpg" alt="image">
-            <div class="details"><a href="#">SEE DETAILS</a></div>
+            <img id="product_personalizer" src="images/product_personalizer.png" alt="image">
+            <div class="details"><a href="#product_personalizer">SEE DETAILS</a></div>
           </div>
         </li>
       </ul>
@@ -112,6 +114,7 @@
           <input type="text" placeholder="Subject">
           <textarea rows="5" placeholder="Type your message here"></textarea>
           <button type="submit">Send</button>
+          <button type="reset">Reset</button>
         </form>
       </div>
     </section>

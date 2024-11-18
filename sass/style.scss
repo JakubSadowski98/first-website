@@ -1,64 +1,50 @@
 /* Variables */
-$color-main: #fff;
+$color-base: #fff;
 $color-dark: #3d3d3d;
-$color-contact: #171717;
-$color-footer: #242424;
-
-$font-text: 'Josefin Sans', sans-serif;
-$font-header: 'Open Sans', sans-serif;
-
-/* Global - style, które są stosowane dla wielu elementów */
+$font-family-large-screen: 'Stint Ultra Expanded', Georgia, serif;
+$font-family-small-screen: Verdana, Arial, sans-serif;
+$font-family-title: 'Open Sans', sans-serif;
+/* Global styles - style, które są stosowane dla wielu elementów */
 *, *::before, *::after {        /* deklaracja mówiąca, ze do rozmiarów wszystkich */
   box-sizing: border-box;       /* elementów HTML (selektor gwiazdka) */
 }                               /* wlicza się padding i border */
-
 body {
   margin: 0; /* usunięcie domyślnego marginesu nadawanego elementowi <body> przez przeglądarkę */
   text-align: center; /* wyśrodkowanie tekstu w całym projekcie */
-  background: $color-main;
+  background: $color-base;
   color: $color-dark;
-  font-size: 16px;
-  line-height: 1.7;
-  font-family: $font-text;
+  font-size: 100%;
+  line-height: 1.4em;
+  font-family: $font-family-small-screen;
 }
-
 .container {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0 20px;
 }
-
 section {
   padding: 108px 0;
 }
-
 .section-title {
   position: relative;
   font-size: 36px;
   margin: 0 0 60px 0;
-  font-family: $font-header;
-
+  font-family: $font-family-title;
   &::after {                // pseudoelement - może posłużyć jako element dekoracyjny "podpięty" do już istniejącego elementu-rodzica, np. <div>
     position: absolute;     // elementy jest pozycjonowany względem swojego rodzica, a nie całej strony
     content: '';
     width: 50px;
     height: 10px;
     background: #ff5e57;
-    bottom: -12px;
+    bottom: -20px;
     left: 50%;                    // centrowawnie elementu w poziomie
     transform: translateX(-50%);
   }
 }
-
 /* Splash */
 .splash {           // pisząć zagnieżdżone reguły należy unikać zbyt
   height: 100vh;    // głębokiego zagnieżdżania (powyżej 3 poziomów)
   position: relative;
-  background-image: url('https://i.postimg.cc/x1KqNzSD/pexels-arina-dmitrieva-13803731.jpg');
-  background-position: center center; // wycentrowanie tła w pionie i poziomie
-  background-size: cover;
-  background-attachment: fixed; // przy zwijaniu strony tło będzie zawsze w tym samym miejscu
-
+  background: $color-dark url('https://i.postimg.cc/x1KqNzSD/pexels-arina-dmitrieva-13803731.jpg') center center/cover fixed; // fixed - przy scrolowaniu strony tło będzie zawsze w tym samym miejscu
   .splash-inner {
     width: 100%;
     position: absolute; // instrukcja ustawiająca element-dziecko dokładnie
@@ -66,24 +52,22 @@ section {
     left: 50%;
     transform: translate(-50%,-50%);
   }
-
   i {                 /* wybierz wszystkie znaczniki <i> w elemencie o klasie .splash */
     font-size: 30px;
     background: $color-dark;
     width: 60px;
     height: 60px;
     line-height: 60px;
-    color: $color-main;
+    color: $color-base;
     border-radius: 50%;
   }
-
   .page-title {
-    color: $color-main;    /* color: white */
+    color: $color-base;    /* color: white */
     font-size: 60px;
+    line-height: 1.7; /* value equals this number multipled font-size */
     margin: 48px 0 0 0;
     position: relative;
-    font-family: $font-header;
-
+    font-family: $font-family-title;
     &::after {            // kompilator stworzy w pliku CSS selektor: .page-title::after
       position: absolute;
       content: '';
@@ -92,172 +76,143 @@ section {
       width: 100px;
       height: 10px;
       transform: translateX(-50%);
-      background: $color-main;
+      background: $color-base;
     }
   }
-
   .page-subtitle {
     margin: 48px 0 0 0;
     font-size: 18px;
-    color: $color-main;
+    color: $color-base;
   }
 }
-
 /* Intro */
 .intro {
-  background: $color-main;
-
+  background: $color-base;
   p {                 /* wybierz wszystkie znaczniki <p> w elemencie o klasie .intro */
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     padding: 48px 0;
-    font-size: 24px;
-    border-top: 1px solid $color-dark;
-    border-bottom: 1px solid $color-dark;
     color: $color-dark;
+    text-align: justify;
+    &:first-of-type {
+      border-top: 1px solid $color-dark;
+      border-bottom: 1px solid $color-dark;
+    }
+    &:nth-of-type(2) {
+      border-bottom: 1px solid $color-dark;
+    }
   }
 }
-
 /* About */
 .about {
   background: #f0f0f0;
+  p {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
-
 /* Skills */
 .skills {
-
   ul {
-    list-style-type: none;  /*resetowanie domyślnych styli */
+    list-style-type: none;  // resetowanie domyślnych styli
     margin: 0;
     padding: 0;
-
     li {
-      position: relative;
+      p {
+        padding-bottom: 1em;
+        text-align: left;
+        margin: 16px 10px;
+      }
+      &:not(:last-child) {
+        p {
+          border-bottom: 1px solid grey;
+        }
+      }
+    }
+  }
+  .skill-image {
+    img {
+      width: 100%;
+      display: block;
     }
   }
 }
-
-.skill-image {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  overflow: hidden; // zawartość wystająca poza kontener jest ukrywana
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; // dopasowanie obrazka do kontenera
-  }
-}
-
-.skill.left {
-
-  .skill-description {
-    padding: 36px 0 36px 55%;
-    text-align: left;
-  }
-}
-
-.skill.right {
-
-  .skill-image {
-    right: 0;
-  }
-
-  .skill-description {
-    padding: 36px 55% 36px 0;
-    text-align: right;
-  }
-}
-
 /* Portfolio */
-   .row::before, .row::after {  // reguła zapobiegająca "uciekaniu" elementów (z właściwością
-  clear: both;                  // float) poza swój kontener
-  content: "";
-  display: table;
-}
-
 .portfolio {
-
+  background: #f0f0f0;
   .row {
     list-style-type: none;
     padding-left: 0;
-
-    li {
-      float: left; // przesunięcie elementu maksymalnie do lewej strony
-      width: 33.3333%;
-    }
-  }
-}
-
-.portfolio-image {
-  position: relative;
-
-  img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-    transition: all 1s;
-
-    &:hover {        // kompilator stworzy w pliku CSS selektor: img.button:hover
-      transform: scale(1.1);
-    }
-
-  }
-
-  .details {
-    width: 120px;
-    height: 25px;
-    background-color: #ff5e57;
-    z-index: 1; // wysunięcie elementu na wierzch (na najwyższą warstwę)
-    display: none;
-    transition: all 1s; // właściwośc pozwalająca na animowanie zmian innych właściwości (np. rozmiar, kolor)
-    position: absolute; // wycentrowanie elementu w pionie i poziomie
     margin: auto;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-
-    &:hover {
+    max-width: 1440px;
+    &::before, &::after { // reguła zapobiegająca "uciekaniu" elementów (z właściwością float) poza swój kontener
+      clear: both;
+      content: "";
+      display: table;
+    }
+    li:not(:last-child)::after {
+      content: "*";
       display: block;
-      transform: scale(1.2);;
-    }
-
-    a {
-      text-decoration: none;
-      color: $color-main;
+      height: 20px;
+      margin-top: 5px;
     }
   }
-
-  &:hover .details {
-    display: block;
-  }
-
-  &::after {
-    position: absolute;
-    top: 0;
-    content: '';
-    width: 100%;
-    height: 100%;
-    background-color: $color-dark;
-    opacity: 60%;
-    display: none;
-  }
-
-  &:hover::after {
-    display: block;
+  .portfolio-image {
+    position: relative;
+    border: 1px solid #d1d7e0;
+    img {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      transition: all 1s;
+    }
+    .details {
+      display: none;
+      width: 120px;
+      height: 25px;
+      background-color: #ff5e57;
+      padding: 5px;
+      z-index: 1; // wysunięcie elementu na wierzch (na najwyższą warstwę)
+      position: absolute; // wycentrowanie elementu w pionie i poziomie
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      transition: all 1s; // właściwośc pozwalająca na animowanie zmian innych właściwości (np. rozmiar, kolor)
+      &:hover {
+        transform: scale(1.2);
+      }
+      a {
+        text-decoration: none;
+        color: $color-base;
+        pointer-events: none;
+      }
+    }
+    &:hover .details {
+      display: flex;
+      align-items: center;
+    }
+    &::after {
+      position: absolute;
+      top: 0;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: $color-dark;
+      opacity: 60%;
+      display: none;
+      transition: all 1s;
+    }
+    &:hover::after {
+      display: block;
+    }
   }
 }
-
 /* Contact */
 .contact {
-  background-color: $color-contact;
-
+  background-color: #171717;
   form {
-    margin: 0 200px;
-
     input, textarea {
       display: block;
       width: 100%;
@@ -266,15 +221,99 @@ section {
     }
   }
 }
-
 /* Footer */
 .page-footer {
-  background-color: $color-footer;
-  color: $color-main;
+  background-color: #242424;
+  color: $color-base;
 }
+/* Zapytania o media */
+@media screen and (min-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+  .skills  {
+    ul {
+      li {
+        &::after { //zapobiega wypływaniu elementu z kontentra
+          content: " ";
+          display: block;
+          clear: both;
+        }
+        .skill-image { //kontener na obrazek
+          width: 50%;
+        }
+        .skill-description {
+          text-align: left;
+          p {
+            border-bottom: none;
+            margin-left: 0px;
+          }
+        }
+      }
+      .skill-left {
+        .skill-image {
+          float: left;
+        }
+        .skill-description {
+          padding-left: 55%;
+          }
+      }
+      .skill-right {
+        .skill-image {
+          float: right;
+        }
+        .skill-description {
+          padding-right: 55%;
+        }
+      }
+    }
+  }
+  .portfolio {
+    .row {
+      li {
+        float: left; // przesunięcie elementu maksymalnie do lewej strony
+        width: 48%;
+        margin: 1%;
+        &:not(:last-child)::after {
+          display: none;
+        }
+      }
+    }
+  }
+  .contact {
+    form {
+      margin: 0 10%;
+    }
+  }
+}
+@media screen and (min-width: 680px) {
+  .intro {
+    .container {
+      display: flex;
+      p {
+        width: 45%;
+        &:nth-of-type(2) {
+          border-top: 1px solid $color-dark;
+        }
+      }
+    }
+  }
+  .about {
+    p {
+      width: 60%;
+    }
+  }
+}
+@media screen and (min-width: 940px) { // style dla większych ekranów
+  .portfolio {
+    .row {
+      li {
+        width: 31.3333%;
+      }
+    }
+  }
 
-
-
+}
 
 
 
