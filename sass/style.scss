@@ -305,6 +305,9 @@ section {
   }
 }
 @media screen and (min-width: 940px) { // style dla większych ekranów
+  body {
+    font-family: $font-family-large-screen;
+  }
   .portfolio {
     .row {
       li {
